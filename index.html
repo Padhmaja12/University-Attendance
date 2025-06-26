@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Attendance App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>University Attendance App</h1>
+    
+    <div id="auth-section">
+      <h2>Login / Register</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <select id="role">
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+      </select>
+      <button onclick="login()">Login</button>
+      <button onclick="register()">Register</button>
+      <div id="auth-message"></div>
+    </div>
+    
+    <div id="dashboard" class="hidden">
+      <h2 id="welcome-msg"></h2>
+      <div id="student-dashboard" class="hidden">
+        <h3>Your Courses</h3>
+        <ul id="student-courses">
+          <li>Course 1 <button onclick="markAttendance('Course 1')">Mark Attendance</button></li>
+          <li>Course 2 <button onclick="markAttendance('Course 2')">Mark Attendance</button></li>
+        </ul>
+      </div>
+      
+      <div id="instructor-dashboard" class="hidden">
+        <h3>Manage Courses</h3>
+        <input type="text" id="course-name" placeholder="New Course Name" />
+        <button onclick="addCourse()">Add Course</button>
+        <ul id="instructor-courses">
+          <li>Course 1 <button onclick="viewRoster('Course 1')">View Roster</button></li>
+        </ul>
+      </div>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
